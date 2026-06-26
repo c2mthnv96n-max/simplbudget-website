@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "DXW6352D9J.com.simplbudget.app",
+        "paths": ["/plaid", "/plaid/*"]
+      }
+    ]
+  }
+}
