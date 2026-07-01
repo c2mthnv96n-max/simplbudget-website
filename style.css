@@ -582,6 +582,18 @@ ol {
   line-height: 1.65;
 }
 
+.step-list {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.step-list li + li {
+  margin-top: 4px;
+}
+
 /* Privacy */
 
 .privacy {
@@ -825,10 +837,6 @@ ol {
 
   .hero-actions {
     justify-content: center;
-  }
-
-  .hero-visual {
-    order: -1;
   }
 
   .phone-frame {
