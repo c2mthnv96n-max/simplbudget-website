@@ -8,10 +8,14 @@
   var waitlistForm = document.getElementById("waitlist-form");
   var formMessage = document.getElementById("form-message");
   var emailInput = document.getElementById("email");
+  var submitButton = document.getElementById("waitlist-submit");
   var waitlistTriggers = document.querySelectorAll("[data-waitlist-open]");
   var navLinks = siteNav ? siteNav.querySelectorAll("a") : [];
+  var screenTabs = document.querySelectorAll(".screen-tab");
+  var screenPanels = document.querySelectorAll(".screen-panel");
 
   var STORAGE_KEY = "simplbudget_waitlist";
+  var API_ENDPOINT = "/api/waitlist";
 
   function openModal() {
     if (!modal) return;
@@ -33,6 +37,10 @@
     if (waitlistForm) {
       waitlistForm.reset();
     }
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = "Join the Waitlist";
+    }
   }
 
   function closeNav() {
@@ -53,29 +61,7 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
-  function handleWaitlistSubmit(event) {
-    event.preventDefault();
-
-    if (!emailInput || !formMessage) return;
-
-    var email = emailInput.value.trim();
-
-    formMessage.className = "form-message";
-
-    if (!email) {
-      formMessage.textContent = "Please enter your email address.";
-      formMessage.classList.add("error");
-      emailInput.focus();
-      return;
-    }
-
-    if (!isValidEmail(email)) {
-      formMessage.textContent = "Please enter a valid email address.";
-      formMessage.classList.add("error");
-      emailInput.focus();
-      return;
-    }
-
+  function rememberEmail(email) {
     try {
       var existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
       if (!existing.includes(email)) {
@@ -83,14 +69,84 @@
         localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
       }
     } catch (err) {
-      // localStorage unavailable — still show success
+      // localStorage unavailable
+    }
+  }
+
+  function showFormMessage(text, type) {
+    if (!formMessage) return;
+    formMessage.textContent = text;
+    formMessage.className = "form-message " + type;
+  }
+
+  function activateScreen(screenId) {
+    screenTabs.forEach(function (tab) {
+      var isActive = tab.getAttribute("data-screen") === screenId;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+    });
+
+    screenPanels.forEach(function (panel) {
+      var isActive = panel.id === "screen-" + screenId;
+      panel.classList.toggle("is-active", isActive);
+      panel.hidden = !isActive;
+    });
+  }
+
+  async function handleWaitlistSubmit(event) {
+    event.preventDefault();
+
+    if (!emailInput || !formMessage) return;
+
+    var email = emailInput.value.trim().toLowerCase();
+    formMessage.className = "form-message";
+
+    if (!email) {
+      showFormMessage("Please enter your email address.", "error");
+      emailInput.focus();
+      return;
     }
 
-    formMessage.textContent = "You're on the list! We'll be in touch soon.";
-    formMessage.classList.add("success");
-    waitlistForm.reset();
+    if (!isValidEmail(email)) {
+      showFormMessage("Please enter a valid email address.", "error");
+      emailInput.focus();
+      return;
+    }
 
-    window.setTimeout(closeModal, 2400);
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Joining…";
+    }
+
+    try {
+      var response = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email }),
+      });
+
+      var payload = await response.json().catch(function () {
+        return {};
+      });
+
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.error || "Unable to join the waitlist.");
+      }
+
+      rememberEmail(email);
+      showFormMessage(payload.message || "You're on the list! Check your inbox for a confirmation email.", "success");
+      waitlistForm.reset();
+      window.setTimeout(closeModal, 2800);
+    } catch (error) {
+      showFormMessage(
+        error.message || "We couldn't complete your signup right now. Please try again shortly.",
+        "error",
+      );
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Join the Waitlist";
+      }
+    }
   }
 
   if (navToggle) {
@@ -120,6 +176,12 @@
   if (waitlistForm) {
     waitlistForm.addEventListener("submit", handleWaitlistSubmit);
   }
+
+  screenTabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      activateScreen(tab.getAttribute("data-screen"));
+    });
+  });
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && modal && !modal.hidden) {

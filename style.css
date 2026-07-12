@@ -822,6 +822,370 @@ ol {
   color: #C97B7B;
 }
 
+/* App showcase */
+
+.app-screens {
+  padding: 100px 0;
+  background: var(--color-surface-elevated);
+  border-top: 1px solid var(--color-divider);
+}
+
+.screen-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.screen-tab {
+  padding: 10px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.screen-tab:hover {
+  color: var(--color-text);
+  border-color: var(--color-primary-light);
+}
+
+.screen-tab.is-active {
+  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.screen-showcase {
+  display: flex;
+  justify-content: center;
+}
+
+.screen-panel {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.screen-panel.is-active {
+  display: flex;
+}
+
+.screen-caption {
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 360px;
+}
+
+.phone-frame-lg {
+  max-width: 300px;
+}
+
+/* Build 78 app mockup components */
+
+.app-status-bar {
+  display: flex;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.safe-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.standing-card {
+  padding: 14px 16px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 12px;
+}
+
+.standing-label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 6px;
+}
+
+.standing-status {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.status-healthy { color: #2d8a5e; }
+.status-watch { color: #c9922e; }
+.status-risk { color: #c97b7b; }
+
+.standing-rec {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.forecast-horizons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+  margin-top: 8px;
+}
+
+.forecast-mini-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 56px;
+}
+
+.forecast-mini-bars .bar {
+  flex: 1;
+  height: var(--h);
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.85;
+}
+
+.scenario-card,
+.funding-card {
+  padding: 16px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 12px;
+}
+
+.scenario-q {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.scenario-row,
+.funding-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.scenario-row strong,
+.funding-row strong {
+  color: var(--color-text);
+}
+
+.text-caution { color: #c9922e; }
+
+.scenario-verdict {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.verdict-safe {
+  background: rgba(122, 175, 150, 0.15);
+  color: #2d6b52;
+}
+
+.funding-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.funding-note,
+.activity-note {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  line-height: 1.5;
+}
+
+.planning-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 6px 12px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+}
+
+.ask-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ask-chip {
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-primary-dark);
+}
+
+.ask-response {
+  padding: 14px;
+  background: var(--color-surface-elevated);
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.ask-response strong {
+  color: var(--color-text);
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  font-size: 0.8125rem;
+}
+
+.activity-item span { color: var(--color-text-secondary); }
+.activity-item.income strong { color: #2d8a5e; }
+.activity-item.expense strong { color: var(--color-text); }
+.activity-item.recurring strong { color: var(--color-text); }
+.activity-item.transfer strong { color: var(--color-text-tertiary); }
+
+.feature-card-highlight {
+  border-color: var(--color-primary-light);
+  background: linear-gradient(180deg, rgba(91, 143, 168, 0.06) 0%, var(--color-bg) 100%);
+}
+
+/* Comparison section */
+
+.different {
+  padding: 100px 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-divider);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.compare-card {
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.compare-old {
+  background: var(--color-bg);
+}
+
+.compare-new {
+  background: linear-gradient(135deg, rgba(91, 143, 168, 0.08) 0%, rgba(122, 175, 150, 0.08) 100%);
+  border-color: var(--color-primary-light);
+}
+
+.compare-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 16px;
+}
+
+.compare-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.compare-card li {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.compare-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.compare-tagline {
+  text-align: center;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 /* Responsive */
 
 @media (max-width: 960px) {
@@ -936,6 +1300,24 @@ ol {
   .features,
   .how-it-works {
     padding: 72px 0;
+  }
+
+  .app-screens,
+  .different {
+    padding: 72px 0;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .screen-tabs {
+    gap: 6px;
+  }
+
+  .screen-tab {
+    padding: 8px 14px;
+    font-size: 0.8125rem;
   }
 
   .privacy {
