@@ -7,7 +7,10 @@
   var modalClose = document.getElementById("modal-close");
   var waitlistForm = document.getElementById("waitlist-form");
   var formMessage = document.getElementById("form-message");
+  var firstNameInput = document.getElementById("first_name");
+  var lastNameInput = document.getElementById("last_name");
   var emailInput = document.getElementById("email");
+  var consentInput = document.getElementById("consent");
   var submitButton = document.getElementById("waitlist-submit");
   var waitlistTriggers = document.querySelectorAll("[data-waitlist-open]");
   var navLinks = siteNav ? siteNav.querySelectorAll("a") : [];
@@ -16,13 +19,20 @@
 
   var STORAGE_KEY = "simplbudget_waitlist";
   var API_ENDPOINT = "/api/waitlist";
+  var SUCCESS_MESSAGE =
+    "You're on the list!\nWe'll let you know as soon as SimplBudget is ready.";
+  var DUPLICATE_MESSAGE =
+    "You're already on the waitlist. We'll contact you when invitations begin.";
+  var SERVER_MESSAGE =
+    "We're having trouble processing signups right now. Please try again in a few minutes.";
+  var INVALID_EMAIL_MESSAGE = "Please enter a valid email address.";
 
   function openModal() {
     if (!modal) return;
     modal.hidden = false;
     document.body.style.overflow = "hidden";
-    if (emailInput) {
-      emailInput.focus();
+    if (firstNameInput) {
+      firstNameInput.focus();
     }
   }
 
@@ -98,18 +108,36 @@
 
     if (!emailInput || !formMessage) return;
 
+    var firstName = (firstNameInput && firstNameInput.value || "").trim();
+    var lastName = (lastNameInput && lastNameInput.value || "").trim();
     var email = emailInput.value.trim().toLowerCase();
+    var consent = !!(consentInput && consentInput.checked);
+
     formMessage.className = "form-message";
 
+    if (!firstName) {
+      showFormMessage("Please enter your first name.", "error");
+      if (firstNameInput) firstNameInput.focus();
+      return;
+    }
+    if (!lastName) {
+      showFormMessage("Please enter your last name.", "error");
+      if (lastNameInput) lastNameInput.focus();
+      return;
+    }
     if (!email) {
       showFormMessage("Please enter your email address.", "error");
       emailInput.focus();
       return;
     }
-
     if (!isValidEmail(email)) {
-      showFormMessage("Please enter a valid email address.", "error");
+      showFormMessage(INVALID_EMAIL_MESSAGE, "error");
       emailInput.focus();
+      return;
+    }
+    if (!consent) {
+      showFormMessage("Please agree to the privacy policy to continue.", "error");
+      if (consentInput) consentInput.focus();
       return;
     }
 
@@ -122,7 +150,13 @@
       var response = await fetch(API_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email }),
+        body: JSON.stringify({
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          consent: true,
+          source: "website",
+        }),
       });
 
       var payload = await response.json().catch(function () {
@@ -130,18 +164,26 @@
       });
 
       if (!response.ok || !payload.ok) {
-        throw new Error(payload.error || "Unable to join the waitlist.");
+        throw new Error(payload.error || SERVER_MESSAGE);
       }
 
       rememberEmail(email);
-      showFormMessage(payload.message || "You're on the list! Check your inbox for a confirmation email.", "success");
+      var message = payload.duplicate
+        ? (payload.message || DUPLICATE_MESSAGE)
+        : (payload.message || SUCCESS_MESSAGE);
+      showFormMessage(message, "success");
       waitlistForm.reset();
-      window.setTimeout(closeModal, 2800);
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "You're on the list";
+      }
+      window.setTimeout(closeModal, 3200);
     } catch (error) {
-      showFormMessage(
-        error.message || "We couldn't complete your signup right now. Please try again shortly.",
-        "error",
-      );
+      var errText = error && error.message ? error.message : SERVER_MESSAGE;
+      if (/couldn't complete|try again shortly/i.test(errText)) {
+        errText = SERVER_MESSAGE;
+      }
+      showFormMessage(errText, "error");
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.textContent = "Join the Waitlist";
@@ -188,4 +230,9 @@
       closeModal();
     }
   });
+
+  // Deep-link support: /#waitlist opens the modal.
+  if (window.location.hash === "#waitlist") {
+    openModal();
+  }
 })();

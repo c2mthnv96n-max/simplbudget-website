@@ -1,42 +1,48 @@
 # SimplBudget Website
 
-Official marketing site for [simplbudget.com](https://www.simplbudget.com) — a personal finance forecasting app that helps users answer: **"Know if you're financially okay."**
+Official marketing site for [simplbudget.com](https://www.simplbudget.com).
 
-## Build 79 — Website refresh
+Reflects **Build 102 RC1** product messaging: Available Margin, Financial Standing, Cash Forecast, Planning, Activity, and Ask SimplBudget.
 
-This site reflects the current product after Build 78:
+## Waitlist
 
-- **Available Margin** — lowest projected checking balance over 90 days
-- **Financial Standing** — Healthy, Watch, At Risk
-- **Cash Forecast** — projected balances over time
-- **Planning** — scenario preview ("What happens if I spend $250?")
-- **Funding Plans** — goal planning without cash shortages
-- **Ask Simpl** — natural-language financial questions
+The waitlist form posts to `/api/waitlist` (Vercel serverless).
 
-## Waitlist API
+### Collects
 
-The waitlist form posts to `/api/waitlist` (Vercel serverless function).
+- First name
+- Last name
+- Email
+- Privacy consent timestamp
+
+### Storage
+
+Rows land in Supabase table `public.waitlist` (service role only).
+
+### Notification
+
+On successful insert, Resend emails **info@simplbudget.com**:
+
+- Subject: `New SimplBudget Waitlist Signup`
+- Body: Name, Email, Signup Date, Source
 
 ### Required Vercel environment variables
 
 | Variable | Description |
 |---|---|
-| `RESEND_API_KEY` | Resend API key for email delivery |
-| `RESEND_FROM_EMAIL` | Verified sender, e.g. `SimplBudget <welcome@simplbudget.com>` |
-| `RESEND_AUDIENCE_ID` | Optional Resend audience ID for contact storage |
-
-Confirmation email:
-
-- **Subject:** Welcome to the SimplBudget Waitlist
-- **Body:** Thank you for joining… We'll notify you when early access is available.
+| `SUPABASE_URL` | Production Supabase URL |
+| `SUPABASE_SERVICE_ROLE_KEY` | Service role key (server-only) |
+| `RESEND_API_KEY` | Resend API key |
+| `RESEND_FROM_EMAIL` | Verified sender, e.g. `SimplBudget <noreply@simplbudget.com>` |
+| `WAITLIST_NOTIFY_EMAIL` | Optional; defaults to `info@simplbudget.com` |
 
 ## Local development
 
-Static files only — open `index.html` in a browser. The waitlist API requires Vercel deployment (or `vercel dev` with env vars).
+Open `index.html` for static review. Waitlist API needs `vercel dev` plus the env vars above, and the `waitlist` migration applied.
 
 ## Deployment
 
-Hosted on Vercel. Push to `main` triggers production deploy.
+Hosted on Vercel. Push to `main` in this website repo triggers production deploy.
 
 ```bash
 git push origin main

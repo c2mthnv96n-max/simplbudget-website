@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SimplBudget projects your checking account cash flow over the next 90 days. See your Available Margin, Financial Standing, and 90-day cash forecast — know if you're financially okay.">
-  <meta name="keywords" content="Available Margin, Cash Flow Forecast, Financial Forecasting, Personal Finance, Financial Planning, Checking Account Forecast, Know if you're financially okay">
+  <meta name="description" content="SimplBudget shows your Available Margin — the lowest your checking balance is projected to reach over the next 90 days — so you can spend with confidence.">
+  <meta name="keywords" content="Available Margin, cash flow forecast, personal finance, checking account, Plaid, iPhone finance app">
   <meta name="author" content="SimplBudget">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.simplbudget.com/">
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.simplbudget.com/">
   <meta property="og:title" content="SimplBudget — Know if you're financially okay">
-  <meta property="og:description" content="Project your checking account cash flow over 90 days. Understand your Available Margin, Financial Standing, and what you can safely do next.">
+  <meta property="og:description" content="Forward-looking cash clarity for your checking account. See Available Margin, upcoming obligations, and your 90-day outlook — without budgeting.">
   <meta property="og:site_name" content="SimplBudget">
   <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://www.simplbudget.com/assets/logo.png">
+  <meta property="og:image:alt" content="SimplBudget">
 
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="SimplBudget — Know if you're financially okay">
-  <meta name="twitter:description" content="90-day cash flow forecasting for your checking account. Available Margin, Financial Standing, and financial confidence — without budgeting.">
+  <meta name="twitter:description" content="See your Available Margin and 90-day cash outlook. Built for people who want clarity, not another budget spreadsheet.">
+  <meta name="twitter:image" content="https://www.simplbudget.com/assets/logo.png">
 
-  <title>SimplBudget — Know if you're financially okay | Cash Flow Forecast</title>
+  <title>SimplBudget — Know if you're financially okay</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +40,9 @@
     "name": "SimplBudget",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "iOS",
-    "description": "SimplBudget projects your checking account cash flow over the next 90 days so you can understand whether upcoming bills, spending, and savings goals fit within your Available Margin.",
+    "description": "SimplBudget projects checking-account cash flow over 90 days and surfaces Available Margin so you can understand whether upcoming bills and spending fit.",
     "url": "https://www.simplbudget.com",
+    "image": "https://www.simplbudget.com/assets/logo.png",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -44,12 +51,24 @@
     },
     "featureList": [
       "Available Margin",
-      "90-day Cash Flow Forecast",
+      "90-day Cash Forecast",
       "Financial Standing",
-      "Planning and Scenario Preview",
+      "Planning scenarios",
       "Funding Plans",
-      "Ask Simpl"
+      "Ask SimplBudget",
+      "Plaid bank connections"
     ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SimplBudget",
+    "url": "https://www.simplbudget.com",
+    "logo": "https://www.simplbudget.com/assets/logo.png",
+    "email": "info@simplbudget.com",
+    "sameAs": []
   }
   </script>
 </head>
@@ -65,8 +84,9 @@
         <a href="#features">Features</a>
         <a href="#app-screens">App</a>
         <a href="#different">Why SimplBudget</a>
-        <a href="#how-it-works">How it Works</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
       </nav>
       <button type="button" class="btn btn-primary btn-header" data-waitlist-open>
         Join the Waitlist
@@ -80,15 +100,15 @@
 
   <main>
 
-    <section class="hero">
+    <section class="hero" id="waitlist">
       <div class="container hero-inner">
         <div class="hero-content">
-          <p class="eyebrow">90-day cash flow forecasting</p>
+          <p class="eyebrow">Cash confidence for checking accounts</p>
           <h1>Know if you're financially okay.</h1>
           <p class="hero-subheadline">
-            SimplBudget projects your checking account cash flow over the next 90 days so you can
-            understand whether upcoming bills, spending, and savings goals fit within your
-            Available Margin.
+            SimplBudget looks ahead at your checking account — income, bills, and recurring obligations —
+            and shows your <strong>Available Margin</strong>: the lowest balance your forecast expects
+            over the next 90 days.
           </p>
           <div class="hero-actions">
             <button type="button" class="btn btn-primary btn-lg" data-waitlist-open>
@@ -98,9 +118,10 @@
               <svg class="apple-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
-              Coming Soon on iPhone
+              Coming soon on iPhone
             </span>
           </div>
+          <p class="hero-trust">Bank connections powered by Plaid. No spreadsheets. No category budgeting.</p>
         </div>
 
         <div class="hero-visual" aria-hidden="true">
@@ -112,18 +133,22 @@
                   <span class="app-greeting">Home</span>
                   <span class="app-date">Your 90-day outlook</span>
                 </div>
-                <div class="safe-card">
-                  <div class="safe-card-top">
-                    <span class="safe-label">Available Margin</span>
+                <div class="margin-card">
+                  <div class="margin-card-top">
+                    <span class="margin-label">Available Margin</span>
                     <span class="info-dot" title="Lowest projected checking balance">i</span>
                   </div>
-                  <span class="safe-amount">$1,247</span>
-                  <span class="safe-sub">Lowest projected balance · next 90 days</span>
+                  <span class="margin-amount">$2,713</span>
+                  <span class="margin-sub">Lowest projected balance · next 90 days</span>
                 </div>
                 <div class="standing-card">
                   <span class="standing-label">Financial Standing</span>
-                  <span class="standing-status status-watch">Watch</span>
-                  <p class="standing-rec">Your projected cash flow is tight in the next few weeks. Review upcoming obligations before making extra purchases.</p>
+                  <span class="standing-status status-healthy">Healthy</span>
+                  <p class="standing-rec">Your checking outlook stays positive across the next 90 days.</p>
+                  <div class="standing-debt">
+                    <span>Scheduled debt payments</span>
+                    <strong>$2,827</strong>
+                  </div>
                 </div>
                 <div class="forecast-card">
                   <span class="forecast-label">Cash Forecast</span>
@@ -135,8 +160,8 @@
                           <stop offset="100%" stop-color="#5B8FA8" stop-opacity="0"/>
                         </linearGradient>
                       </defs>
-                      <path class="chart-area" d="M0,58 L35,52 L70,48 L105,55 L140,38 L175,32 L210,40 L245,28 L280,22 L280,80 L0,80 Z" fill="url(#chart-fill)"/>
-                      <path class="chart-line" d="M0,58 L35,52 L70,48 L105,55 L140,38 L175,32 L210,40 L245,28 L280,22" fill="none" stroke="#5B8FA8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path class="chart-area" d="M0,48 L35,52 L70,58 L105,45 L140,40 L175,36 L210,42 L245,30 L280,26 L280,80 L0,80 Z" fill="url(#chart-fill)"/>
+                      <path class="chart-line" d="M0,48 L35,52 L70,58 L105,45 L140,40 L175,36 L210,42 L245,30 L280,26" fill="none" stroke="#5B8FA8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </div>
                   <div class="forecast-horizons">
@@ -153,15 +178,14 @@
     <section class="app-screens" id="app-screens">
       <div class="container">
         <div class="section-header">
-          <h2>See your finances, clearly</h2>
-          <p>Every screen is built around projected cash flow — not categories, envelopes, or spreadsheets.</p>
+          <h2>See where your money is headed</h2>
+          <p>Home, Planning, Activity, and Ask — built around projected cash, not expense categories.</p>
         </div>
         <div class="screen-tabs" role="tablist" aria-label="App screens">
           <button type="button" class="screen-tab is-active" role="tab" aria-selected="true" data-screen="home">Home</button>
           <button type="button" class="screen-tab" role="tab" aria-selected="false" data-screen="planning">Planning</button>
-          <button type="button" class="screen-tab" role="tab" aria-selected="false" data-screen="funding">Funding Plans</button>
-          <button type="button" class="screen-tab" role="tab" aria-selected="false" data-screen="ask">Ask Simpl</button>
           <button type="button" class="screen-tab" role="tab" aria-selected="false" data-screen="activity">Activity</button>
+          <button type="button" class="screen-tab" role="tab" aria-selected="false" data-screen="ask">Ask</button>
         </div>
         <div class="screen-showcase">
           <div class="screen-panel is-active" id="screen-home" role="tabpanel">
@@ -170,14 +194,18 @@
                 <div class="app-preview app-preview-home">
                   <div class="app-status-bar"><span>9:41</span></div>
                   <div class="app-header"><span class="app-greeting">Home</span></div>
-                  <div class="safe-card">
-                    <span class="safe-label">Available Margin</span>
-                    <span class="safe-amount">$1,247</span>
-                    <span class="safe-sub">Lowest projected balance · 90 days</span>
+                  <div class="margin-card">
+                    <span class="margin-label">Available Margin</span>
+                    <span class="margin-amount">$2,713</span>
+                    <span class="margin-sub">Lowest projected balance · 90 days</span>
                   </div>
                   <div class="standing-card">
                     <span class="standing-label">Financial Standing</span>
                     <span class="standing-status status-healthy">Healthy</span>
+                    <div class="standing-debt">
+                      <span>Scheduled debt payments</span>
+                      <strong>$2,827</strong>
+                    </div>
                   </div>
                   <div class="forecast-card">
                     <span class="forecast-label">Cash Forecast</span>
@@ -191,67 +219,28 @@
                 </div>
               </div>
             </div>
-            <p class="screen-caption">Available Margin, Financial Standing, and your 90-day Cash Forecast on one screen.</p>
+            <p class="screen-caption">Available Margin, Financial Standing, scheduled obligations, and your Cash Forecast — on one Home screen.</p>
           </div>
           <div class="screen-panel" id="screen-planning" role="tabpanel" hidden>
             <div class="phone-frame phone-frame-lg">
               <div class="phone-screen">
                 <div class="app-preview">
                   <div class="app-status-bar"><span>9:41</span></div>
-                  <div class="app-header"><span class="app-greeting">Scenario Preview</span></div>
+                  <div class="app-header"><span class="app-greeting">Planning</span></div>
                   <div class="scenario-card">
-                    <p class="scenario-q">What happens if I spend $250 on Jul 20?</p>
-                    <div class="scenario-row"><span>Projected balance</span><strong>$892</strong></div>
-                    <div class="scenario-row"><span>After purchase</span><strong class="text-caution">$642</strong></div>
-                    <div class="scenario-verdict verdict-safe">You can afford this purchase.</div>
+                    <p class="scenario-q">What happens if I spend $250 next Friday?</p>
+                    <div class="scenario-row"><span>Available Margin today</span><strong>$2,713</strong></div>
+                    <div class="scenario-row"><span>After this purchase</span><strong>$2,463</strong></div>
+                    <div class="scenario-verdict verdict-safe">This purchase fits within your projected outlook.</div>
                   </div>
                   <div class="planning-actions">
-                    <span class="pill">What-If Scenarios</span>
+                    <span class="pill">What-if scenarios</span>
                     <span class="pill">Funding Plans</span>
                   </div>
                 </div>
               </div>
             </div>
-            <p class="screen-caption">Preview purchases before you make them — using your real projected cash flow.</p>
-          </div>
-          <div class="screen-panel" id="screen-funding" role="tabpanel" hidden>
-            <div class="phone-frame phone-frame-lg">
-              <div class="phone-screen">
-                <div class="app-preview">
-                  <div class="app-status-bar"><span>9:41</span></div>
-                  <div class="app-header"><span class="app-greeting">Funding Plan</span></div>
-                  <div class="funding-card">
-                    <span class="funding-name">Summer Trip</span>
-                    <div class="funding-row"><span>Target</span><strong>$2,000</strong></div>
-                    <div class="funding-row"><span>Required</span><strong>$167 / paycheck</strong></div>
-                    <div class="funding-row"><span>Paychecks left</span><strong>6</strong></div>
-                    <div class="scenario-verdict verdict-safe">Affordable — forecast stays positive</div>
-                  </div>
-                  <p class="funding-note">Simulations only — no money is automatically reserved.</p>
-                </div>
-              </div>
-            </div>
-            <p class="screen-caption">Plan future goals safely without creating cash shortages in your forecast.</p>
-          </div>
-          <div class="screen-panel" id="screen-ask" role="tabpanel" hidden>
-            <div class="phone-frame phone-frame-lg">
-              <div class="phone-screen">
-                <div class="app-preview">
-                  <div class="app-status-bar"><span>9:41</span></div>
-                  <div class="app-header"><span class="app-greeting">Ask Simpl</span></div>
-                  <div class="ask-suggestions">
-                    <span class="ask-chip">Am I financially okay?</span>
-                    <span class="ask-chip">Can I afford this purchase?</span>
-                    <span class="ask-chip">Why is my Available Margin negative?</span>
-                    <span class="ask-chip">What is affecting my forecast?</span>
-                  </div>
-                  <div class="ask-response">
-                    <p>Your Available Margin is <strong>$1,247</strong> — the lowest your checking balance is projected to reach over the next 90 days.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p class="screen-caption">Ask questions in plain language and get answers based on your projected cash flow.</p>
+            <p class="screen-caption">Preview purchases and savings goals against your real projected cash — before you commit.</p>
           </div>
           <div class="screen-panel" id="screen-activity" role="tabpanel" hidden>
             <div class="phone-frame phone-frame-lg">
@@ -260,17 +249,36 @@
                   <div class="app-status-bar"><span>9:41</span></div>
                   <div class="app-header"><span class="app-greeting">Activity</span></div>
                   <div class="activity-list">
-                    <div class="activity-item income"><span>Paycheck</span><strong>+$2,400</strong></div>
+                    <div class="activity-item income"><span>Direct deposit</span><strong>+$2,400</strong></div>
                     <div class="activity-item expense"><span>Rent</span><strong>−$1,450</strong></div>
-                    <div class="activity-item expense"><span>Electric</span><strong>−$142</strong></div>
-                    <div class="activity-item recurring"><span>Netflix</span><strong>−$16</strong></div>
+                    <div class="activity-item expense"><span>Auto loan</span><strong>−$600</strong></div>
+                    <div class="activity-item recurring"><span>Streaming</span><strong>−$16</strong></div>
                     <div class="activity-item transfer"><span>Savings transfer</span><strong>−$200</strong></div>
                   </div>
-                  <p class="activity-note">Income, bills, subscriptions, and transfers that power your forecast.</p>
+                  <p class="activity-note">Clear classifications that feed your forecast — without internal scores or jargon.</p>
                 </div>
               </div>
             </div>
-            <p class="screen-caption">Review the financial activity behind your 90-day projected cash flow.</p>
+            <p class="screen-caption">Review the income, bills, and transfers behind your 90-day outlook.</p>
+          </div>
+          <div class="screen-panel" id="screen-ask" role="tabpanel" hidden>
+            <div class="phone-frame phone-frame-lg">
+              <div class="phone-screen">
+                <div class="app-preview">
+                  <div class="app-status-bar"><span>9:41</span></div>
+                  <div class="app-header"><span class="app-greeting">Ask SimplBudget</span></div>
+                  <div class="ask-suggestions">
+                    <span class="ask-chip">Am I financially okay?</span>
+                    <span class="ask-chip">Can I afford this purchase?</span>
+                    <span class="ask-chip">What is affecting my Available Margin?</span>
+                  </div>
+                  <div class="ask-response">
+                    <p>Your Available Margin is <strong>$2,713</strong> — the lowest your checking balance is projected to reach over the next 90 days.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="screen-caption">Ask plain-language questions and get answers grounded in your projected cash flow.</p>
           </div>
         </div>
       </div>
@@ -279,8 +287,8 @@
     <section class="features" id="features">
       <div class="container">
         <div class="section-header">
-          <h2>Built for financial confidence</h2>
-          <p>Understand your projected cash flow — without managing a traditional budget.</p>
+          <h2>Built for cash confidence</h2>
+          <p>Understand what you can do next — without managing a traditional budget.</p>
         </div>
         <div class="features-grid">
           <article class="feature-card feature-card-highlight">
@@ -290,7 +298,7 @@
               </svg>
             </div>
             <h3>Available Margin</h3>
-            <p>The lowest projected checking balance over your next 90-day forecast. One number that tells you how much room you have before cash gets tight.</p>
+            <p>The lowest projected checking balance over your next 90 days. One number for how much room you have before cash gets tight.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
@@ -299,7 +307,7 @@
               </svg>
             </div>
             <h3>Financial Standing</h3>
-            <p>See whether you're <strong>Healthy</strong>, <strong>Watch</strong>, or <strong>At Risk</strong> — with recommendations based on your projected cash flow, not yesterday's spending.</p>
+            <p>See whether you're <strong>Healthy</strong>, <strong>Watch</strong>, or <strong>At Risk</strong> — with guidance based on your projected cash, not yesterday's spending.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
@@ -307,8 +315,8 @@
                 <path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>
               </svg>
             </div>
-            <h3>Cash Forecast</h3>
-            <p>Projected checking balances over time — income, obligations, and expected spending combined into a clear 90-day outlook.</p>
+            <h3>Forward-looking forecast</h3>
+            <p>A clear 90-day outlook that combines expected income, recurring obligations, and everyday spending patterns.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
@@ -316,8 +324,8 @@
                 <path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/>
               </svg>
             </div>
-            <h3>Planning</h3>
-            <p>Ask "What happens if I spend $250?" and see how a purchase affects your projected balance on a specific date — before you commit.</p>
+            <h3>Automatic obligations</h3>
+            <p>Recurring bills, subscriptions, and scheduled debt payments are detected from your linked activity — so you don't rebuild a budget every month.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
@@ -325,8 +333,8 @@
                 <rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>
               </svg>
             </div>
-            <h3>Funding Plans</h3>
-            <p>Safely plan future goals — see how much to set aside per paycheck without creating future cash shortages in your forecast.</p>
+            <h3>Planning &amp; Funding Plans</h3>
+            <p>Ask “what if?” for a purchase, or plan a goal per paycheck — without creating future cash shortages in your outlook.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">
@@ -334,8 +342,31 @@
                 <path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>
               </svg>
             </div>
-            <h3>Ask Simpl</h3>
-            <p>Ask "Am I financially okay?", "Can I afford this purchase?", or "Why is my Available Margin negative?" — and get answers from your projected cash flow.</p>
+            <h3>Ask SimplBudget</h3>
+            <p>Ask “Am I financially okay?” or “Can I afford this?” and get answers from your projected cash flow — clearly labeled as estimates.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience" id="who">
+      <div class="container">
+        <div class="section-header">
+          <h2>Who it's for</h2>
+          <p>People who want clarity about next month — not another spreadsheet.</p>
+        </div>
+        <div class="audience-grid">
+          <article class="audience-card">
+            <h3>Busy households</h3>
+            <p>Paychecks, rent, loans, and school payments land on different dates. You need the trough, not a category pie chart.</p>
+          </article>
+          <article class="audience-card">
+            <h3>Anyone tired of budgeting</h3>
+            <p>If traditional budgets feel like homework, SimplBudget focuses on whether your checking account stays okay.</p>
+          </article>
+          <article class="audience-card">
+            <h3>Decision-makers mid-month</h3>
+            <p>Before a trip, a gift, or a big purchase — see how it lands against Available Margin.</p>
           </article>
         </div>
       </div>
@@ -345,7 +376,7 @@
       <div class="container">
         <div class="section-header">
           <h2>What makes SimplBudget different</h2>
-          <p>Forecasting, not budgeting. Confidence, not categories.</p>
+          <p>Forward-looking clarity — not category tracking.</p>
         </div>
         <div class="compare-grid">
           <div class="compare-card compare-old">
@@ -360,14 +391,14 @@
           <div class="compare-card compare-new">
             <span class="compare-label">SimplBudget…</span>
             <ul>
-              <li>Forecasts your future checking account cash flow</li>
-              <li>Projects whether your balance stays positive</li>
-              <li>Helps you understand what you can safely do next</li>
-              <li>Shows your Available Margin and 90-day outlook automatically</li>
+              <li>Projects your checking cash over 90 days</li>
+              <li>Surfaces Available Margin automatically</li>
+              <li>Detects recurring obligations from your activity</li>
+              <li>Helps you decide what you can safely do next</li>
             </ul>
           </div>
         </div>
-        <p class="compare-tagline">No budgeting. No envelopes. No spreadsheets. No manual planning.</p>
+        <p class="compare-tagline">No budgeting. No envelopes. No spreadsheets.</p>
       </div>
     </section>
 
@@ -382,18 +413,18 @@
             <span class="step-number">1</span>
             <div class="step-content">
               <h3>Connect your accounts</h3>
-              <p>Securely link your checking accounts through Plaid — or enter your finances manually.</p>
+              <p>Securely link checking accounts with Plaid — or enter balances manually if you prefer.</p>
             </div>
           </li>
           <li class="step">
             <span class="step-number">2</span>
             <div class="step-content">
-              <h3>SimplBudget builds your 90-day forecast</h3>
+              <h3>We build your 90-day outlook</h3>
               <ul class="step-list">
-                <li>Projected income</li>
-                <li>Upcoming obligations</li>
+                <li>Expected income</li>
                 <li>Recurring bills and subscriptions</li>
-                <li>Expected spending patterns</li>
+                <li>Scheduled debt payments</li>
+                <li>Everyday spending patterns</li>
               </ul>
             </div>
           </li>
@@ -405,7 +436,7 @@
                 <li>Available Margin</li>
                 <li>Financial Standing</li>
                 <li>Cash Forecast</li>
-                <li>Planning, Funding Plans, and Ask Simpl</li>
+                <li>Planning, Funding Plans, and Ask</li>
               </ul>
             </div>
           </li>
@@ -423,17 +454,52 @@
             </svg>
           </div>
           <div class="privacy-content">
-            <h2>Built with privacy in mind.</h2>
-            <p>Bank connections are securely powered by Plaid. SimplBudget never stores your online banking credentials. Your financial data is used only to generate your projected cash flow and personalized insights.</p>
+            <h2>Built with privacy in mind</h2>
+            <p>
+              Bank connections are powered by <strong>Plaid</strong>. SimplBudget never stores your online banking credentials.
+              Data is used to generate your projected cash outlook and in-app guidance — not sold as a product.
+              Read our <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.
+            </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Questions, answered</h2>
+          <p>Straightforward answers for first-time visitors.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is Available Margin?</summary>
+            <p>Available Margin is the lowest projected checking balance over the next 90 days. It is an estimate based on your linked activity and detected patterns — not a guarantee.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this a budgeting app?</summary>
+            <p>No. SimplBudget does not ask you to assign every purchase to a category. It focuses on whether your checking account stays okay as bills and income land.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do bank connections work?</summary>
+            <p>Connections use Plaid. You authenticate with your institution through Plaid’s secure flow. SimplBudget does not see or store your bank username or password.</p>
+          </details>
+          <details class="faq-item">
+            <summary>When will it be available?</summary>
+            <p>SimplBudget is coming soon on iPhone. Join the waitlist and we’ll email you when access opens.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this financial advice?</summary>
+            <p>No. SimplBudget provides informational estimates only. Always review your own finances before making spending decisions.</p>
+          </details>
         </div>
       </div>
     </section>
 
     <section class="cta-banner">
       <div class="container cta-inner">
-        <h2>Know if you're financially okay — before it's too late.</h2>
-        <p>Join the waitlist for early access to 90-day cash flow forecasting on iPhone.</p>
+        <h2>Get early access</h2>
+        <p>Join the waitlist for SimplBudget on iPhone — Available Margin, a 90-day outlook, and cash confidence without budgeting.</p>
         <button type="button" class="btn btn-primary btn-lg" data-waitlist-open>
           Join the Waitlist
         </button>
@@ -449,10 +515,13 @@
         <span class="logo-text">SimplBudget</span>
       </a>
       <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#privacy">Privacy</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="#faq">FAQ</a>
         <a href="mailto:support@simplbudget.com">Support</a>
+        <a href="mailto:info@simplbudget.com">Contact</a>
       </nav>
-      <p class="copyright">&copy; 2026 SimplBudget. Personal finance forecasting — not budgeting.</p>
+      <p class="copyright">&copy; 2026 SimplBudget. Personal finance forecasting — not budgeting. Estimates only; not financial advice.</p>
     </div>
   </footer>
 
@@ -464,17 +533,47 @@
         </svg>
       </button>
       <h2 id="modal-title">Join the Waitlist</h2>
-      <p class="modal-subtitle">Be the first to know when SimplBudget launches on iPhone.</p>
+      <p class="modal-subtitle">Be first to know when SimplBudget opens on iPhone.</p>
       <form id="waitlist-form" class="waitlist-form" novalidate>
-        <label for="email" class="sr-only">Email address</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="you@example.com"
-          autocomplete="email"
-          required
-        >
+        <div class="form-row">
+          <div class="form-field">
+            <label for="first_name">First name</label>
+            <input
+              type="text"
+              id="first_name"
+              name="first_name"
+              autocomplete="given-name"
+              maxlength="80"
+              required
+            >
+          </div>
+          <div class="form-field">
+            <label for="last_name">Last name</label>
+            <input
+              type="text"
+              id="last_name"
+              name="last_name"
+              autocomplete="family-name"
+              maxlength="80"
+              required
+            >
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          >
+        </div>
+        <label class="consent-row" for="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span>I agree to the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted about SimplBudget access.</span>
+        </label>
         <button type="submit" class="btn btn-primary btn-full" id="waitlist-submit">Join the Waitlist</button>
       </form>
       <p class="form-message" id="form-message" role="status" aria-live="polite"></p>

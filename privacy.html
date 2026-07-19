@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.simplbudget.com/privacy.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <title>Privacy Policy — SimplBudget</title>
+  <meta name="description" content="How SimplBudget collects, uses, and protects your information.">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .legal-page { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+    .legal-page h1 { font-size: 2rem; margin-bottom: 8px; }
+    .legal-page h2 { font-size: 1.25rem; margin-top: 2rem; }
+    .legal-page h3 { font-size: 1.05rem; margin-top: 1.25rem; }
+    .legal-page p, .legal-page li { color: var(--color-text-secondary); line-height: 1.65; }
+    .legal-page a { color: var(--color-primary); }
+    .legal-back { display: inline-block; margin-bottom: 24px; color: var(--color-text-secondary); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="SimplBudget home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">SimplBudget</span>
+      </a>
+      <a class="btn btn-primary btn-header" href="/#waitlist">Join the Waitlist</a>
+    </div>
+  </header>
+  <main class="legal-page">
+    <a class="legal-back" href="/">← Back to SimplBudget</a>
+    <h1>SimplBudget Privacy Policy</h1>
+<p>
+<strong>Effective date:</strong> June 11, 2026  
+<br>
+<strong>Last updated:</strong> June 11, 2026
+</p>
+<p>
+SimplBudget (&quot;SimplBudget,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the SimplBudget mobile application and related services (the &quot;Service&quot;). This Privacy Policy describes how we collect, use, disclose, and protect personal information when you use the Service.
+</p>
+<p>
+By creating an account or using the Service, you agree to this Privacy Policy.
+</p>
+<hr>
+<h2>1. Who we are</h2>
+<p>
+SimplBudget provides consumer financial guidance software for United States users. SimplBudget is <strong>not</strong> a bank, lender, broker-dealer, investment adviser, credit repair organization, or debt settlement provider.
+</p>
+<p>
+<strong>Contact:</strong> privacy@simplbudget.com
+</p>
+<hr>
+<h2>2. Information we collect</h2>
+<h3>2.1 Account information</h3>
+<p>
+When you sign in with Apple or Google through our authentication provider (Supabase Auth), we receive:
+</p>
+<ul>
+<li>A unique user identifier</li>
+<li>Email address (when provided by your identity provider)</li>
+<li>Authentication session metadata</li>
+</ul>
+<h3>2.2 Financial account data (via Plaid)</h3>
+<p>
+If you connect a financial institution, we receive data from Plaid, which may include:
+</p>
+<ul>
+<li>Institution name</li>
+<li>Account names, types, masks, and balances</li>
+<li>Transaction history (amounts, dates, merchant names, categories where available)</li>
+<li>Pending transaction information</li>
+</ul>
+<p>
+We use this data to detect recurring income and expenses, generate forecasts, calculate Available Margin, power Ask SimplBudget, and support Planning scenarios.
+</p>
+<p>
+<strong>Important:</strong> We do not receive or store your online banking username or password. Authentication with your financial institution is handled by Plaid.
+</p>
+<h3>2.3 Derived and computed data</h3>
+<p>
+We generate and store:
+</p>
+<ul>
+<li>Recurring transaction patterns</li>
+<li>Forecast snapshots (projected balances at defined horizons)</li>
+<li>Available Margin snapshots</li>
+<li>Planning scenario results (computed in-app; not permanently stored as scenarios in the current version unless otherwise disclosed in-product)</li>
+</ul>
+<h3>2.4 Ask SimplBudget / AI processing</h3>
+<p>
+When you use Ask SimplBudget, we process:
+</p>
+<ul>
+<li>Your selected question</li>
+<li>Pre-computed financial decision outputs (Available Margin, forecast risk flags, amounts, dates)</li>
+<li>A natural-language explanation request sent to our server</li>
+</ul>
+<p>
+Our server may send a structured summary of this information to <strong>OpenAI</strong> to generate an explanation. OpenAI does not receive your bank login credentials. We instruct our systems not to send unnecessary personal identifiers to OpenAI beyond what is required to explain the computed result.
+</p>
+<p>
+We do <strong>not</strong> maintain a persistent chat history database for Ask SimplBudget in the current version. Each request is processed to produce a response shown in the app session.
+</p>
+<h3>2.5 Subscription information</h3>
+<p>
+If you purchase a subscription, <strong>RevenueCat</strong> and the Apple App Store (or Google Play, if applicable) process payment and subscription status. We receive entitlement status and product identifiers through RevenueCat. We do not receive your full payment card number.
+</p>
+<h3>2.6 Device and technical data</h3>
+<p>
+We may collect standard technical information necessary to operate the Service, including app version, device platform, and error logs. Debug logging in development builds may include additional diagnostic data and should not be enabled in production releases.
+</p>
+<hr>
+<h2>3. How we use information</h2>
+<p>
+We use personal information to:
+</p>
+<ul>
+<li>Provide and maintain the Service</li>
+<li>Connect financial accounts through Plaid</li>
+<li>Sync transactions and compute forecasts and Available Margin</li>
+<li>Answer Ask SimplBudget questions and generate explanations</li>
+<li>Operate subscription access through RevenueCat</li>
+<li>Improve reliability, security, and product performance</li>
+<li>Respond to support requests and legal obligations</li>
+</ul>
+<p>
+We do <strong>not</strong> sell your personal information.
+</p>
+<p>
+We do <strong>not</strong> use your data for third-party advertising profiling in the current version of the Service.
+</p>
+<hr>
+<h2>4. How we share information</h2>
+<p>
+We share information only with service providers that help us operate the Service:
+</p>
+<p>
+| Provider | Purpose |
+<br>
+|----------|---------|
+<br>
+| <strong>Supabase</strong> | Authentication, database, and secure server functions |
+<br>
+| <strong>Plaid</strong> | Bank account connection and financial data aggregation |
+<br>
+| <strong>OpenAI</strong> | Natural-language explanations for Ask SimplBudget (structured decision context only) |
+<br>
+| <strong>RevenueCat</strong> | Subscription management and entitlement verification |
+<br>
+| <strong>Apple / Google</strong> | Sign-in and in-app purchase processing |
+</p>
+<p>
+We may also disclose information:
+</p>
+<ul>
+<li>To comply with law, regulation, legal process, or governmental request</li>
+<li>To protect the rights, safety, and security of SimplBudget, our users, or others</li>
+<li>In connection with a merger, acquisition, or asset sale (with notice where required)</li>
+</ul>
+<hr>
+<h2>5. Data retention</h2>
+<p>
+See our <strong>Data Retention Policy</strong> (<code>data_retention_policy.md</code>) for category-specific retention periods.
+</p>
+<p>
+In general:
+</p>
+<ul>
+<li>Financial data remains until you disconnect an institution or delete your account</li>
+<li>Forecast and Available Margin snapshots are replaced on subsequent computation runs</li>
+<li>Ask SimplBudget requests are not stored as persistent conversation logs in the current version</li>
+</ul>
+<hr>
+<h2>6. Security</h2>
+<p>
+We use industry-standard measures including encrypted transport (TLS), authenticated access controls, and server-side storage of sensitive integration secrets.
+</p>
+<p>
+Plaid access tokens are stored on our servers and are not intended to be accessed by the mobile application. Users should not attempt to access server-side token fields.
+</p>
+<p>
+No method of transmission or storage is 100% secure. Report security concerns to privacy@simplbudget.com.
+</p>
+<hr>
+<h2>7. Your choices and rights</h2>
+<p>
+Depending on your state of residence, you may have rights to:
+</p>
+<ul>
+<li>Access personal information we maintain about you</li>
+<li>Correct inaccurate information</li>
+<li>Delete your account and associated data</li>
+<li>Withdraw consent where processing is consent-based</li>
+<li>Opt out of certain data uses where applicable</li>
+</ul>
+<p>
+<strong>In-app controls:</strong>
+</p>
+<ul>
+<li>Disconnect a linked institution (Settings → Connected Accounts)</li>
+<li>Sign out</li>
+<li>Manage or cancel subscriptions through the App Store</li>
+</ul>
+<p>
+<strong>Account deletion:</strong> Submit a request to privacy@simplbudget.com with subject line &quot;Account Deletion Request.&quot; We will verify your identity and delete or de-identify personal information subject to legal retention requirements.
+</p>
+<p>
+California residents may have additional rights under the CCPA/CPRA. Virginia, Colorado, Connecticut, and other state privacy laws may provide similar rights. Contact us to exercise them.
+</p>
+<hr>
+<h2>8. Children</h2>
+<p>
+The Service is not directed to children under 13 (or 16 where applicable). We do not knowingly collect personal information from children.
+</p>
+<hr>
+<h2>9. International users</h2>
+<p>
+The Service is intended for users in the United States. If you access the Service from outside the U.S., your information may be processed in the United States.
+</p>
+<hr>
+<h2>10. Changes</h2>
+<p>
+We may update this Privacy Policy. We will post the updated version with a revised &quot;Last updated&quot; date and, where required, provide additional notice.
+</p>
+<hr>
+<h2>11. Contact</h2>
+<p>
+<strong>SimplBudget — Privacy</strong>  
+<br>
+Email: privacy@simplbudget.com
+</p>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">&copy; 2026 SimplBudget.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="mailto:support@simplbudget.com">Support</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
