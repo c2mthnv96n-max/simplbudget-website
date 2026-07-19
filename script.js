@@ -18,7 +18,9 @@
   var screenPanels = document.querySelectorAll(".screen-panel");
 
   var STORAGE_KEY = "simplbudget_waitlist";
-  var API_ENDPOINT = "/api/waitlist";
+  var cfg = window.SIMPLBUDGET_CONFIG || {};
+  var API_ENDPOINT = cfg.waitlistEndpoint || "/api/waitlist";
+  var ANON_KEY = cfg.supabaseAnonKey || "";
   var SUCCESS_MESSAGE =
     "You're on the list!\nWe'll let you know as soon as SimplBudget is ready.";
   var DUPLICATE_MESSAGE =
@@ -147,9 +149,15 @@
     }
 
     try {
+      var headers = { "Content-Type": "application/json" };
+      if (ANON_KEY) {
+        headers.apikey = ANON_KEY;
+        headers.Authorization = "Bearer " + ANON_KEY;
+      }
+
       var response = await fetch(API_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: headers,
         body: JSON.stringify({
           first_name: firstName,
           last_name: lastName,
