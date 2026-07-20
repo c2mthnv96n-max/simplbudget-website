@@ -6,7 +6,10 @@ Reflects **Build 102 RC1** product messaging: Available Margin, Financial Standi
 
 ## Waitlist
 
-The waitlist form posts to `/api/waitlist` (Vercel serverless).
+The waitlist form posts to the Supabase Edge Function `waitlist-signup`
+(`config.js` → `https://qlirjdbmxetmzjefgfrg.supabase.co/functions/v1/waitlist-signup`).
+
+Legacy `/api/waitlist` remains as a Vercel fallback but is not used by the live form.
 
 ### Collects
 
@@ -17,24 +20,22 @@ The waitlist form posts to `/api/waitlist` (Vercel serverless).
 
 ### Storage
 
-Rows land in Supabase table `public.waitlist` (service role only).
+Rows land in Supabase table `public.waitlist` (service role inside the edge function).
 
 ### Notification
 
-On successful insert, Resend emails **info@simplbudget.com**:
+On successful insert, Resend emails **info@simplbudget.com** when these Supabase secrets are set:
 
-- Subject: `New SimplBudget Waitlist Signup`
-- Body: Name, Email, Signup Date, Source
-
-### Required Vercel environment variables
-
-| Variable | Description |
+| Secret | Description |
 |---|---|
-| `SUPABASE_URL` | Production Supabase URL |
-| `SUPABASE_SERVICE_ROLE_KEY` | Service role key (server-only) |
 | `RESEND_API_KEY` | Resend API key |
 | `RESEND_FROM_EMAIL` | Verified sender, e.g. `SimplBudget <noreply@simplbudget.com>` |
 | `WAITLIST_NOTIFY_EMAIL` | Optional; defaults to `info@simplbudget.com` |
+
+### Required for capture
+
+None beyond the deployed edge function + `waitlist` table (service role is already available to Edge Functions).
+
 
 ## Local development
 
