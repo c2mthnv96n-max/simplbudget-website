@@ -292,6 +292,11 @@ ol {
   line-height: 1.65;
   color: var(--color-text-secondary);
   max-width: 480px;
+  margin-bottom: 16px;
+}
+
+.hero-subheadline-secondary {
+  font-size: 1.0625rem;
   margin-bottom: 40px;
 }
 
@@ -1131,6 +1136,33 @@ ol {
   margin-bottom: 32px;
 }
 
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.benefit-card {
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.benefit-card h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.benefit-card p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
 .compare-card {
   padding: 32px;
   border-radius: var(--radius-lg);
@@ -1314,6 +1346,11 @@ ol {
 
   .compare-grid {
     grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 32px;
   }
 
   .screen-tabs {
